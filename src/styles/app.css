@@ -1,0 +1,13 @@
+@import './globals.css';
+
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
