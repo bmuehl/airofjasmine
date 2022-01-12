@@ -1,8 +1,19 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+
   export let text: string;
 
+  const dispatch = createEventDispatcher();
+
+  const animationend = (e: AnimationEvent) => {
+    dispatch("end");
+    e.target.removeEventListener("animationend", animationend);
+  };
+
+  let refs: HTMLSpanElement[] = [];
   let chars: string[];
   $: chars = text.split("").map((char) => (char.trim() ? char : "&nbsp;"));
+  $: refs[chars.length - 1]?.addEventListener("animationend", animationend);
 </script>
 
 <section class="container">
@@ -12,6 +23,7 @@
         class="char"
         aria-hidden="true"
         style={`animation-delay: ${0.2 + i / 20}s`}
+        bind:this={refs[i]}
       >
         {@html char}
       </span>

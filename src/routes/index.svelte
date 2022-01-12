@@ -1,13 +1,22 @@
 <script lang="ts">
   import BannerText from "$lib/components/BannerText/BannerText.svelte";
+  import { fade } from "svelte/transition";
+
+  let after = false;
 </script>
 
 <div class="parent">
-  <BannerText text="Air of Jasmine" />
+  <BannerText text="Air of Jasmine" on:end={() => (after = true)} />
+
+  <div class="relative flex w-full justify-center">
+    {#if after}
+      <span class="-bottom-6 absolute" in:fade>coming soon</span>
+    {/if}
+  </div>
 </div>
 
 <style lang="postcss">
   .parent {
-    @apply flex items-center justify-center h-full;
+    @apply flex items-center justify-center flex-col h-full;
   }
 </style>
