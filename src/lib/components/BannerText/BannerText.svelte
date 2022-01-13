@@ -14,7 +14,7 @@
     }, time);
   };
 
-  onMount(() => startPlaying(400));
+  onMount(() => startPlaying(500));
 
   let count = 0;
   let start = false;
