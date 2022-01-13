@@ -1,33 +1,41 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
+  import { jumpIn } from "./transitions";
 
   export let text: string;
 
   const dispatch = createEventDispatcher();
 
-  const animationend = (e: AnimationEvent) => {
-    dispatch("end");
-    e.target.removeEventListener("animationend", animationend);
+  const startPlaying = (time: number) => {
+    setTimeout(() => {
+      start = !start;
+      startPlaying(count % 2 === 0 ? 4000 : 850);
+      count++;
+    }, time);
   };
 
-  let refs: HTMLSpanElement[] = [];
+  onMount(() => startPlaying(400));
+
+  let count = 0;
+  let start = false;
   let chars: string[];
   $: chars = text.split("").map((char) => (char.trim() ? char : "&nbsp;"));
-  $: refs[chars.length - 1]?.addEventListener("animationend", animationend);
 </script>
 
 <section class="container">
   <span class="banner" aria-label={text} role="heading">
-    {#each chars as char, i}
-      <span
-        class="char"
-        aria-hidden="true"
-        style={`animation-delay: ${0.2 + i / 20}s`}
-        bind:this={refs[i]}
-      >
-        {@html char}
-      </span>
-    {/each}
+    {#if start}
+      {#each chars as char, index (index)}
+        <span
+          class="char"
+          aria-hidden="true"
+          transition:jumpIn={{ delay: index * 60 }}
+          on:introend={() => index === chars.length - 1 && dispatch("end")}
+        >
+          {@html char}
+        </span>
+      {/each}
+    {/if}
   </span>
 </section>
 
@@ -41,25 +49,6 @@
   }
 
   .char {
-    display: inline-block;
-    animation: move-text 0.5s ease-out forwards;
-    transform: translateY(1em);
-    opacity: 0;
-  }
-
-  @keyframes move-text {
-    0% {
-      transform: translateY(0.2em);
-      opacity: 0;
-    }
-
-    50% {
-      transform: translateY(-0.2em);
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    @apply inline-block;
   }
 </style>
