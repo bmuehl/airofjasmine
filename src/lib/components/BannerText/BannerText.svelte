@@ -1,41 +1,30 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from "svelte";
-  import { jumpIn } from "./transitions";
+  import { createEventDispatcher } from "svelte";
+  import { animationend } from "./animationend";
 
   export let text: string;
 
   const dispatch = createEventDispatcher();
 
-  const startPlaying = (time: number) => {
-    setTimeout(() => {
-      start = !start;
-      startPlaying(count % 2 === 0 ? 4000 : 850);
-      count++;
-    }, time);
-  };
-
-  onMount(() => startPlaying(500));
-
-  let count = 0;
-  let start = false;
   let chars: string[];
   $: chars = text.split("").map((char) => (char.trim() ? char : "&nbsp;"));
 </script>
 
 <section class="container">
   <span class="banner" aria-label={text} role="heading">
-    {#if start}
-      {#each chars as char, index (index)}
-        <span
-          class="char"
-          aria-hidden="true"
-          transition:jumpIn={{ delay: index * 60 }}
-          on:introend={() => index === chars.length - 1 && dispatch("end")}
-        >
-          {@html char}
-        </span>
-      {/each}
-    {/if}
+    {#each chars as char, index (index)}
+      <span
+        class="char"
+        aria-hidden="true"
+        style={`animation-delay: ${index * 60}ms`}
+        use:animationend={{
+          dispatch,
+          condition: index === chars.length - 1,
+        }}
+      >
+        {@html char}
+      </span>
+    {/each}
   </span>
 </section>
 
@@ -49,6 +38,6 @@
   }
 
   .char {
-    @apply inline-block;
+    @apply inline-block animate-jump opacity-0;
   }
 </style>
