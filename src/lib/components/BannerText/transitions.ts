@@ -1,7 +1,7 @@
 import { sineOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/types/runtime/transition';
 
-export function jumpIn(_node: HTMLElement, params: { delay: number }): TransitionConfig {
+export function jump(_node: HTMLElement, params: { delay: number }): TransitionConfig {
   return {
     css: (t, u) => {
       return `

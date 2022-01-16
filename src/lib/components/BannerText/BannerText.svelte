@@ -1,6 +1,5 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { animationend } from "./animationend";
 
   export let text: string;
 
@@ -17,10 +16,7 @@
         class="char"
         aria-hidden="true"
         style={`animation-delay: ${index * 60}ms`}
-        use:animationend={{
-          dispatch,
-          condition: index === chars.length - 1,
-        }}
+        on:animationend={() => index === chars.length - 1 && dispatch("end")}
       >
         {@html char}
       </span>
