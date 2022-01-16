@@ -6,7 +6,7 @@
 </script>
 
 <div class="parent">
-  <BannerText text="Air of Jasmine" on:end={() => (after = true)} />
+  <BannerText text="Air of Jasmine" on:animationend={() => (after = true)} />
 
   <div class="relative flex w-full justify-center">
     {#if after}

@@ -9,26 +9,21 @@
   $: chars = text.split("").map((char) => (char.trim() ? char : "&nbsp;"));
 </script>
 
-<section class="container">
-  <span class="banner" aria-label={text} role="heading">
-    {#each chars as char, index (index)}
-      <span
-        class="char"
-        aria-hidden="true"
-        style={`animation-delay: ${index * 60}ms`}
-        on:animationend={() => index === chars.length - 1 && dispatch("end")}
-      >
-        {@html char}
-      </span>
-    {/each}
-  </span>
-</section>
+<span class="banner" aria-label={text} role="heading">
+  {#each chars as char, index (index)}
+    <span
+      class="char"
+      aria-hidden="true"
+      style={`animation-delay: ${index * 60}ms;`}
+      on:animationend={(e) =>
+        index === chars.length - 1 && dispatch("animationend", e)}
+    >
+      {@html char}
+    </span>
+  {/each}
+</span>
 
 <style lang="postcss">
-  .container {
-    @apply flex items-center justify-center;
-  }
-
   .banner {
     @apply text-4xl font-extralight;
   }
