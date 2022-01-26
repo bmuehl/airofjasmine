@@ -1,54 +1,54 @@
 {
-  ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-7e9abd53.js",
-    "src": ".svelte-kit/build/runtime/internal/start.js",
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-5119d9ae.js",
+    "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-6b554de1.js"
+      "_vendor-94812545.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
-      ".svelte-kit/build/components/error.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
       "src/routes/index.svelte"
-    ],
-    "css": [
-      "assets/start-d5b4de3e.css"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-33ef7718.js",
+    "file": "pages/__layout.svelte-f393374f.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-6b554de1.js"
+      "_vendor-94812545.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-67e65531.css"
+      "assets/pages/__layout.svelte-77983011.css"
     ]
   },
-  ".svelte-kit/build/components/error.svelte": {
-    "file": "error.svelte-7d6c04f7.js",
-    "src": ".svelte-kit/build/components/error.svelte",
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-0bb163de.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-6b554de1.js"
+      "_vendor-94812545.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-a3401b51.js",
+    "file": "pages/index.svelte-8aac0443.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-6b554de1.js"
+      "_vendor-94812545.js"
     ],
     "css": [
       "assets/pages/index.svelte-21eb14f0.css"
+    ],
+    "assets": [
+      "assets/album-cover-1490ad53.webp"
     ]
   },
-  "_vendor-6b554de1.js": {
-    "file": "chunks/vendor-6b554de1.js"
+  "_vendor-94812545.js": {
+    "file": "chunks/vendor-94812545.js"
   }
 }
