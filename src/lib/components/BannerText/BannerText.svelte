@@ -14,7 +14,7 @@
     <span
       class="char"
       aria-hidden="true"
-      style={`animation-delay: ${index * 60}ms;`}
+      style:animation-delay={`${index * 60}ms`}
       on:animationend={(e) =>
         index === chars.length - 1 && dispatch("animationend", e)}
     >
