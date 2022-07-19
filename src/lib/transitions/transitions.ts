@@ -1,5 +1,5 @@
-import { sineOut } from 'svelte/easing';
-import type { TransitionConfig } from 'svelte/types/runtime/transition';
+import { sineOut } from 'svelte/easing'
+import type { TransitionConfig } from 'svelte/types/runtime/transition'
 
 export function jump(_node: HTMLElement, params: { delay: number }): TransitionConfig {
   return {
@@ -7,10 +7,10 @@ export function jump(_node: HTMLElement, params: { delay: number }): TransitionC
       return `
         transform: translateY(${u * Math.cos(t + 20) * 1.4}em);
         opacity: ${t};
-      `;
+      `
     },
     easing: sineOut,
     delay: params.delay,
-    duration: 500,
-  };
+    duration: 500
+  }
 }

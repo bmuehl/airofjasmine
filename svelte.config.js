@@ -1,12 +1,11 @@
-import adapter from "@sveltejs/adapter-static";
-import preprocess from "svelte-preprocess";
-import { imagetools } from 'vite-imagetools';
+import adapter from '@sveltejs/adapter-static'
+import preprocess from 'svelte-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: [preprocess({})],
+  preprocess: preprocess(),
 
   kit: {
     prerender: {
@@ -15,15 +14,9 @@ const config = {
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: null,
-    }),
+      fallback: null
+    })
+  }
+}
 
-    vite: {
-      plugins: [
-        imagetools()
-      ]
-    },
-  },
-};
-
-export default config;
+export default config

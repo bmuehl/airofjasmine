@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte'
 
-  export let text: string;
+  export let text: string
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher()
 
-  let chars: string[];
-  $: chars = text.split("").map((char) => (char.trim() ? char : "&nbsp;"));
+  let chars: string[]
+  $: chars = text.split('').map((char) => (char.trim() ? char : '&nbsp;'))
 </script>
 
 <span class="banner" aria-label={text} role="heading">
@@ -15,8 +15,7 @@
       class="char"
       aria-hidden="true"
       style:animation-delay={`${index * 60}ms`}
-      on:animationend={(e) =>
-        index === chars.length - 1 && dispatch("animationend", e)}
+      on:animationend={(e) => index === chars.length - 1 && dispatch('animationend', e)}
     >
       {@html char}
     </span>

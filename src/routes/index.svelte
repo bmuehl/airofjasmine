@@ -1,9 +1,9 @@
 <script lang="ts">
-  import BannerText from "$lib/components/BannerText/BannerText.svelte";
-  import { fade } from "svelte/transition";
-  import albumCover from "$lib/assets/album-cover.webp?w=200&imagetools";
+  import BannerText from '$lib/components/BannerText/BannerText.svelte'
+  import { fade } from 'svelte/transition'
+  import albumCover from '$lib/assets/album-cover.webp?w=200&imagetools'
 
-  let after = false;
+  let after = false
 </script>
 
 <div class="parent">
