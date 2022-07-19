@@ -1,10 +1,14 @@
 {
+  "album-cover.webp": {
+    "file": "immutable/assets/album-cover-8db23575.webp",
+    "src": "album-cover.webp"
+  },
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-ee978293.js",
+    "file": "immutable/start-42e0bb75.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-c76ce50c.js"
+      "_index-b11c4558.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -13,39 +17,47 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-cbcb906b.js",
+    "file": "immutable/pages/__layout.svelte-13803875.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-c76ce50c.js"
+      "_index-b11c4558.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-77983011.css"
+      "immutable/assets/__layout-509c3cab.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
-    "file": "error.svelte-22a2deee.js",
+    "file": "immutable/error.svelte-70b3613f.js",
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-c76ce50c.js"
+      "_index-b11c4558.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-adeef5f1.js",
+    "file": "immutable/pages/index.svelte-785d81b1.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-c76ce50c.js"
+      "_index-b11c4558.js"
     ],
     "css": [
-      "assets/pages/index.svelte-21eb14f0.css"
+      "immutable/assets/index-6d8eb67a.css"
     ]
   },
-  "_vendor-c76ce50c.js": {
-    "file": "chunks/vendor-c76ce50c.js"
+  "_index-b11c4558.js": {
+    "file": "immutable/chunks/index-b11c4558.js"
+  },
+  "src/routes/index.css": {
+    "file": "immutable/assets/index-6d8eb67a.css",
+    "src": "src/routes/index.css"
+  },
+  "src/routes/__layout.css": {
+    "file": "immutable/assets/__layout-509c3cab.css",
+    "src": "src/routes/__layout.css"
   }
 }
