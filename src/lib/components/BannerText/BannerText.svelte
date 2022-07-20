@@ -24,7 +24,7 @@
 
 <style lang="postcss">
   .banner {
-    @apply text-4xl font-extralight;
+    @apply text-5xl font-extralight;
   }
 
   .char {
