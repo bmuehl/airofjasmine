@@ -20,6 +20,6 @@
 
 <style lang="postcss">
   .parent {
-    @apply flex items-center justify-center flex-col h-full container px-4;
+    @apply flex items-center justify-center flex-col h-full container mx-auto px-4;
   }
 </style>
